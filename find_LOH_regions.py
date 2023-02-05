@@ -20,21 +20,21 @@ def process_csv_file(input_file, output_file):
                     results[0] = str(row[0])
                     results[1] = int(row[1])
                     results[2] = int(row[1])
-                    results[3] = 'T-like' if int(row[4]) > int(row[6]) else 'E-like'
+                    results[3] = 'A-like' if int(row[4]) > int(row[6]) else 'B-like'
                     counter = 1
                     continue
                 if str(row[2]) in ['A','C','G','T'] and str(results[0]) == str(row[0]):
-                    if str(row[0]) == str(rows[i-1][0]) and row[2] in ['A','C','G','T'] and int(row[4]) > int(row[6]) and str(results[3]) == 'T-like':
+                    if str(row[0]) == str(rows[i-1][0]) and row[2] in ['A','C','G','T'] and int(row[4]) > int(row[6]) and str(results[3]) == 'A-like':
                         results[2] = int(row[1])
                         counter += 1
-                    elif str(row[0]) == str(rows[i-1][0]) and row[2] in ['A','C','G','T'] and int(row[4]) < int(row[6]) and str(results[3]) == 'E-like':
+                    elif str(row[0]) == str(rows[i-1][0]) and row[2] in ['A','C','G','T'] and int(row[4]) < int(row[6]) and str(results[3]) == 'B-like':
                         results[2] = int(row[1])
                         counter += 1
                 else:
                     results[0] = str(row[0])
                     results[1] = int(row[1])
                     results[2] = int(row[1])
-                    results[3] = 'T-like' if int(row[4]) > int(row[6]) else 'E-like'
+                    results[3] = 'A-like' if int(row[4]) > int(row[6]) else 'B-like'
                     counter = 1
                     continue
 
